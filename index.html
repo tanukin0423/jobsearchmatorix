@@ -106,7 +106,12 @@
         .category.low-goal-high-interaction {
             background-color: #FFFFBA;
         }
-        
+        .matrix-explanation {
+            background-color: #ecf0f1;
+            border-left: 5px solid #3498db;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
         .goal-legend {
             font-weight: bold;
             margin-bottom: 10px;
@@ -132,240 +137,11 @@
             font-style: italic;
             margin-top: 20px;
         }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        h1, h2, h4 {
-            text-align: center;
-        }
-        .matrix {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: repeat(2, 1fr);
-            gap: 10px;
-            width: 100%;
-            max-width: 800px;
-            height: 600px;
-        }
-        .category {
-            padding: 10px;
-            background-color: #f0f0f0;
-            cursor: pointer;
-            font-weight: bold;
-            position: relative;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        .jobs {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            overflow-y: auto;
-        }
-        .jobs-content {
-            background-color: white;
-            margin: 10% auto;
-            padding: 20px;
-            width: 80%;
-            max-width: 800px;
-            position: relative;
-        }
-        .close-button,
-        .print-button {
-            position: absolute;
-            top: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            background-color: #f0f0f0;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-        .close-button {
-            right: 50px;
-        }
-        .print-button {
-            right: 10px;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            list-style-type: disc;
-        }
-        @media print {
-            body * {
-                visibility: hidden;
-            }
-            .print-area, .print-area * {
-                visibility: visible;
-            }
-            .print-area {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-            }
-        }
-        /* 新しいスタイル */
-        .category.high-goal-low-interaction {
-            background-color: #FFB3BA;
-        }
-        .category.high-goal-high-interaction {
-            background-color: #BAFFC9;
-        }
-        .category.low-goal-low-interaction {
-            background-color: #BAE1FF;
-        }
-        .category.low-goal-high-interaction {
-            background-color: #FFFFBA;
-        }
-        
-        .goal-legend {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .axis-explanation {
-            margin-bottom: 15px;
-        }
-        .career-types {
-            background-color: #e8f6f3;
-            border: 1px solid #1abc9c;
-            border-radius: 5px;
-            padding: 15px;
-            margin-top: 20px;
-        }
-        .career-type {
-            margin-bottom: 15px;
-        }
-        .career-type-title {
-            font-weight: bold;
-            color: #16a085;
-        }
-        .conclusion {
-            font-style: italic;
-            margin-top: 20px;
-        }
-        .small-text {
-    display: block;
-    width: 100%;       /* 要素を横幅いっぱいに設定 */
-    margin-top: 10px;  /* 上の要素との間に十分な余白を追加 */
-    font-size: 0.8em;  /* 小さめの文字サイズ */
-    color: #666;       /* 薄めの文字色 */
-    text-align: left;  /* テキストを左揃えに設定 */
-}
-.category {
-    display: flex;
-    flex-direction: column; /* 子要素を縦方向に並べるように設定 */
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-/* レスポンシブデザインのための追加 */
-@media screen and (max-width: 768px) {
-    body {
-        margin: 10px;
-        font-size: 14px;
-    }
-
-    h1 {
-        font-size: 1.5em;
-    }
-
-    h2, h4 {
-        font-size: 1.2em;
-    }
-
-    .matrix {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, 1fr);
-        height: auto;
-        max-width: 100%;
-    }
-
-    .category {
-        padding: 5px;
-        font-size: 0.9em;
-        height: auto;
-        min-height: 100px;
-    }
-
-    .jobs-content {
-        margin: 5% auto;
-        padding: 10px;
-        width: 95%;
-    }
-
-    .close-button,
-    .print-button {
-        top: 5px;
-        font-size: 14px;
-        padding: 3px 6px;
-    }
-
-    .close-button {
-        right: 40px;
-    }
-
-    .goal-legend,
-    .axis-explanation,
-    .career-types,
-    .conclusion {
-        font-size: 0.9em;
-    }
-
-    .small-text {
-        font-size: 0.7em;
-    }
-}
-
-/* インタラクティブ要素の追加 */
-.category {
-    transition: all 0.3s ease;
-}
-
-.category:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.close-button,
-.print-button {
-    transition: background-color 0.3s ease;
-}
-
-.close-button:hover,
-.print-button:hover {
-    background-color: #e0e0e0;
-}
-
-/* アニメーションの追加 */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.jobs {
-    animation: fadeIn 0.3s ease;
-}
     </style>
 </head>
 <body>
     <h1>職業マトリックス</h1>
-    <div class="matrix-explanation"></div>
+    <div class="matrix-explanation">
         <div class="goal-legend">
             ◎：目標管理が明確・〇：比較的目標がある・◇：目標管理はさほどない・◆：殆どない
         </div>
@@ -404,27 +180,12 @@
         このマトリックスは、自分の価値観や働き方の好みを反映した職業選択をサポートするツールとして活用できます。<br>
         自分に合った職業を見つけることで、仕事への満足度や生産性が高まることが期待できます。
     </p>
-    <div class="matrix">
-        <div class="category high-goal-low-interaction">
-            目標管理が明確（比較的高いものも含む）<br>人と関わる要素が少ない仕事<br>
-            <small class="small-text">参考: 参考: 賃金は比較的高く、イベント業は成功報酬に左右されることもあります。ワークライフバランスはプロジェクトにより変動します（例: ソフトウェア開発やイベントプランナー）。</small>
+        <div class="matrix">
+            <div class="category high-goal-low-interaction">目標管理が明確（比較的高いものも含む）、人と関わる要素が少ない仕事</div>
+            <div class="category high-goal-high-interaction">目標管理が明確◎（比較的高いものも含む〇）、人と関わる要素が多い仕事</div>
+            <div class="category low-goal-low-interaction">目標管理がさほど高くない（低いものも含む）、人と関わる要素が少ない仕事</div>
+            <div class="category low-goal-high-interaction">目標管理がさほど高くない（低いものも含む）、人と関わる要素が多い仕事</div>
         </div>
-        <div class="category high-goal-high-interaction">
-            目標管理が明確◎（比較的高いものも含む〇）<br>人と関わる要素が多い仕事<br>
-            <small class="small-text">参考: 賃金は成果に応じて変動することがあります。ワークライフバランスは長時間労働が発生することもあります（例: 営業職やコンサルタント）。</small>
-        </div>
-        <div class="category low-goal-low-interaction">
-            目標管理がさほど高くない（低いものも含む）<br>人と関わる要素が少ない仕事<br>
-            <small class="small-text">参考: 賃金は低めですが、クリエイティブな職業では実績により高収入の可能性もあり、ワークライフバランスは比較的良好です（例: データ入力やクリエイティブ職）。</small>
-        </div>
-        <div class="category low-goal-high-interaction">
-            目標管理がさほど高ない（低いものも含む）<br>人と関わる要素が多い仕事<br>
-            <small class="small-text">参考: 賃金は安定しているが昇給が少なめ。ワークライフバランスは職種によって異なるが、シフト勤務や長時間労働が発生することもあります（例: 教育職や医療職）。</small>
-        </div>
-    </div>
-    
-    
-    
     <div class="jobs">
         <div class="jobs-content">
             <button class="close-button">×</button>
@@ -440,7 +201,7 @@
                         <li>◎金融アナリスト（ＩＲ広報担当）<br>
                         <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/445" class="job-description">企業の財務状況を分析し、投資判断をサポート</a></li>
                     <li>◎投資アナリスト<br>
-                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/457"class="job-description">株式や債券の価値を評価し、投資戦略を立案</a></li>
+                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/457" class="job-description">株式や債券の価値を評価し、投資戦略を立案</a></li>
                     <li>◎ポートフォリオ（ファンド）マネージャー<br>
                         <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/470" class="job-description">投資家の資産を最適に配分し、運用</a></li>
                     <li>〇アクチュアリー<br>
@@ -497,12 +258,12 @@
                 <div>提案型営業・◎コンサル系職
                     <ul>
                      <li>◎経営コンサルタント<br>
-                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/81"class="job-description">顧客の問題を理解し、最適な解決策を提案・販売</a></li>
+                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/81" class="job-description">顧客の問題を理解し、最適な解決策を提案・販売</a></li>
                     <li>◎ビジネス開発担当<br><span class="job-description">新規市場や商品の機会を見つけ、事業を拡大</span></li>
                     <li>◎ITコンサルタント<br>
-                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/362"class="job-description">IT戦略を立案し、システム導入を支援</a></li>
+                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/362" class="job-description">IT戦略を立案し、システム導入を支援</a></li>
                     <li>◎ＷＥＢマーケティング営業
-                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/240"class="job-description">webマーケティング（ネット広告・販売促進）</a></li> </li>
+                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/240" class="job-description">webマーケティング（ネット広告・販売促進）</a></li>
                     <li>◎セールスエンジニア<br><span class="job-description">技術的な製品の利点を説明し、販売を促進</span></li>
                     <li>◎アカウントマネージャー<br><span class="job-description">主要顧客との長期的な関係を構築・維持</span></li>   
                     </ul>
@@ -515,13 +276,16 @@
                         <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/60" class="job-description">顧客のライフスタイルに合った車を提案・販売</a></li>
                     <li>◎MR(医薬情報担当者)<br>
                         <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/63" class="job-description">医師に新薬の効果や使用法を説明・提案</a></li>
-                    <li>◎証券・保険・銀行系営業・<br>
+                    <li>◎証券・保険・銀行系営業<br>
                         <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/463" class="job-description">●証券外務員（資産運用）の売上目標達成に向けて営業活動</a></li>
-                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/454" class="job-description">●銀行・信金等の仕事。事業性融資（個人のローン推進や資産運用）の目標達成に向けての営業活動</a></li><br>
-                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/453" class="job-description">●保険商品の売上目標達成に向けて営業活動</a></li><br>
-                    <li>〇旅行代理店・ツアーコンダクター<br>
+                    <li>◎事業性融資担当<br>
+                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/454" class="job-description">●事業性融資（個人のローンや資産運用）の売上目標達成に向けて営業活動</a></li>
+                    <li>◎保険営業<br>
+                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/453" class="job-description">●保険商品の売上目標達成に向けて営業活動</a></li>
+                    <li>〇旅行代理店<br>
                         <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/109" class="job-description">顧客の希望に沿った旅行プランを提案・手配</a></li>
-                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/110" class="job-description">ツアーコンダクター</a></li>
+                    <li>〇ツアーコンダクター<br>
+                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/110" class="job-description">旅行の当日同行・進行管理を行う</a></li>
                 </ul>
             </div>
             <div>メーカー系営業職
@@ -555,13 +319,14 @@
             </div>
             <div>販売・小売
                 <ul>
-                    <li>〇店舗スタッフ・スーパー店員等<br>
-                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/54" class="job-description">●デーパート店員。商品紹介から会計まで顧客対応</a></li>
-                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/57" class="job-description">●スーパーマーケット顧客対応から会計まで</a></li>
+                    <li>〇デパート店員<br>
+                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/54" class="job-description">商品紹介から会計まで顧客対応</a></li>
+                    <li>〇スーパーマーケット店員<br>
+                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/57" class="job-description">顧客対応から会計まで</a></li>
                     <li>〇アパレル・ファッションアドバイザー<br>
                         <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/73" class="job-description">顧客の好みに合ったコーディネートを提案</a></li>
                     <li>〇美容部員<br>
-                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/464" class="job-description">化粧品の使い方や効果を説明・提案</span></li>
+                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/464" class="job-description">化粧品の使い方や効果を説明・提案</a></li>
                     <li>〇携帯電話販売員<br>
                         <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/450" class="job-description">最適な機種やプランを提案</a></li>
                     <li>〇家電アドバイザー<br>
@@ -613,15 +378,16 @@
             </div>
             <div>テクニカルワーク
                 <ul>
-                     <li>◇製品（ＰＣ）の組み立て・管理スタッフ<br>
-                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/265" class="job-description">●機械製品の組み立て・品質基準への適合を確認</a></li>
-                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/531" class="job-description">●ＰＣの組み立て・品質基準への適合を確認</a></li>
+                     <li>◇機械製品の組み立て・管理スタッフ<br>
+                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/265" class="job-description">機械製品の組み立て・品質基準への適合を確認</a></li>
+                     <li>◇ＰＣの組み立て・管理スタッフ<br>
+                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/531" class="job-description">ＰＣの組み立て・品質基準への適合を確認</a></li>
                     <li>◇検査工（食品）<br>
-                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/548"class="job-description">食品・製品の安全性耐久性検証</a></li>
+                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/548" class="job-description">食品・製品の安全性耐久性検証</a></li>
                     <li>◆技術文書作成者<br><span class="job-description">マニュアルや仕様書など技術文書を執筆</span></li>
                     <li>◆ラボテクニシャン<br><span class="job-description">研究室で実験や分析を実施</span></li>
                     <li>◇食品技術者<br>
-                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/288"class="job-description">加工食品開発・品質管理の仕事</a></li>
+                        <a href="https://shigoto.mhlw.go.jp/User/Occupation/Detail/288" class="job-description">加工食品開発・品質管理の仕事</a></li>
                 </ul>
             </div>
 
@@ -725,6 +491,31 @@
         document.querySelector('.print-button').addEventListener('click', function() {
             window.print();
         });
+
+        // ツール1（適職診断）からのURL連携
+        // 例: jobserch-print-1050ver6.html?cat=high-goal-high-interaction
+        // 該当カテゴリのジョブリストを自動表示する
+        (function autoOpenFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            const cat = params.get('cat');
+            const validCats = [
+                'high-goal-high-interaction',
+                'high-goal-low-interaction',
+                'low-goal-high-interaction',
+                'low-goal-low-interaction'
+            ];
+            if (cat && validCats.includes(cat) && jobData[cat]) {
+                const jobsElement = document.querySelector('.jobs');
+                const printArea = jobsElement.querySelector('.print-area');
+                printArea.innerHTML = jobData[cat];
+                jobsElement.style.display = 'block';
+                // ヒント表示（上部に「診断結果から開かれました」バナー）
+                const banner = document.createElement('div');
+                banner.style.cssText = 'background:#e3f2fd;border-left:4px solid #1976d2;padding:10px 15px;margin-bottom:15px;border-radius:4px;font-size:0.9em;color:#0d47a1;';
+                banner.innerHTML = '🌱 <strong>適職診断の結果から開かれました。</strong>このカテゴリの職業リストを表示しています。';
+                printArea.insertBefore(banner, printArea.firstChild);
+            }
+        })();
     </script>
 </body>
 </html>
